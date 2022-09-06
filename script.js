@@ -6,6 +6,18 @@ function main() {
       alpha: true,
     });
 
-    const shader = "shader";
+    // Vertex Shaders
+
+    const vertexShader =
+        "void main() {"
+        "}";
+    
+    // Frament Shader
+
+    const fragmentShader = `
+        void main() {
+            console.log(canvas);
+        }
+    `;
 }
     
