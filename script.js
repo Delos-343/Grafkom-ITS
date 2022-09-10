@@ -4,14 +4,16 @@ function main() {
     const gl = canvas.getContext("webgl");
 
     // Vertex Shaders
-
-    const vertexShader =
-        "void main() {"
-        "}";
+    const vertexShaderCode =
+    "void main() {"
+    "}";
     
-    // Frament Shader
+    const vertexShader = gl.createShader(gl.VERTEX_SHADER);
+    gl.shaderSource(vertexShader, vertexShaderCode);
+    
 
-    const fragmentShader = `
+    // Frament Shader
+    const fragmentShaderCode = `
         void main() {
             console.log(canvas);
         }
