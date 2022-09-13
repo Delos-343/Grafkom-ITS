@@ -1,7 +1,7 @@
 
 function main() {
-    const canvas = document.querySelector('#paintJob');
-    const gl = canvas.getContext("webgl");
+    var canvas = document.querySelector('#paintJob');
+    var gl = canvas.getContext("webgl");
 
     var vertices = [
         0.5, 0.5,
