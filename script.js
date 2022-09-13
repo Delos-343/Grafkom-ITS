@@ -3,7 +3,11 @@ function main() {
     const canvas = document.querySelector('#paintJob');
     const gl = canvas.getContext("webgl");
 
-    var vertices = "array of 0.5, 0.5, 0.0, 0.0, -0.5, 0.5" ;
+    var vertices = [
+        0.5, 0.5,
+        0.0, 0.0,
+        -0.5, 0.5
+    ];
     
     var buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAy_BUFFER, buffer);
