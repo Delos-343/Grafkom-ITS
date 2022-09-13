@@ -6,7 +6,10 @@ function main() {
     var vertices = [
         0.5, 0.5,
         0.0, 0.0,
-        -0.5, 0.5
+        -0.5, 0.5,
+
+        // 0.5, 0.5
+
     ];
     
     var buffer = gl.createBuffer();
@@ -61,6 +64,12 @@ function main() {
     gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 0, 0);
     gl.clearColor(1.0, 0.75, 0.79, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.drawArray(gl.POINT, 0, 3)
+    gl.drawArray(gl.POINT, 0, 3);
+    /* gl.drawArray(gl.LINES, 0, 3);   =>   for drawing a line
+       gl.drawArray(gl.LINE_STRIP, 0, 3);
+       gl.drawArray(gl.TRIANGLES, 0, 3);
+       gl.drawArray(gl.TRIANGLE_STRIP, 0, 3);
+       gl.drawArray(gl.TRIANGLE_LOOP, 0, 3);
+       gl.drawArray(gl.TRIANGLE_FAN, 0, 4); */
 } 
     
