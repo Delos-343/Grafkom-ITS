@@ -10,8 +10,8 @@ function main() {
     ];
     
     var buffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAy_BUFFER, buffer);
-    gl.bufferData(gl.ARRAy_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
     
 
     // Vertex Shaders
