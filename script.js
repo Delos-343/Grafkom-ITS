@@ -5,7 +5,7 @@ function main() {
 
     var vertices = "array of 0.5, 0.5, 0.0, 0.0, -0.5, 0.5" ;
     
-    var buffer - gl.createBuffer();
+    var buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAy_BUFFER, buffer);
     gl.bufferData(gl.ARRAy_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
     
@@ -17,7 +17,7 @@ function main() {
         
         void main() {
             gl_PointSize = 15.0;
-            gl_Position = vec4(0.5, 0.5, 1.0, 1.0);
+            gl_Position = vec4(aPosition, 0.0, 1.0);
         }
     `;
     
@@ -37,11 +37,23 @@ function main() {
         }
     `;
 
-    var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER_)
+    var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER)
+
+    gl.shaderSource(ragmentShader, fragmentShaderCode);
+    gl.compileShader(fragmentShader);
 
     var shaderProgram = gl.createProgram();
     
     gl.attachShader(shaderProgram, vertexShader);
     gl.attachShader(shaderProgram, fragmentShader);
-}
+    gl.linkShader(shaderProgram);
+    gl.useProgram(shaderProgram);
+
+    var aPosition = gl.getAttribLocation(shaderProgram, "aPosition");
+
+    gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 0, 0);
+    gl.clearColor(1.0, 0.75, 0.79, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArray(gl.POINT, 0, 3)
+} 
     
